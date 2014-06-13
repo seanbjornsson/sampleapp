@@ -10,6 +10,7 @@ describe User do
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+  it { should respond_to(:password_digest)}
 
   it { should be_valid }
 
@@ -17,7 +18,7 @@ describe User do
     before { @user.name = " " }
     it { should_not be_valid }
   end
-  
+
   describe "when email is not present" do
     before { @user.email = " " }
     it { should_not be_valid }
